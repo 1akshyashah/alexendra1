@@ -1,0 +1,16 @@
+# Neural network project - Python 3.10+
+fastapi==0.104.1
+uvicorn==0.24.0
+pydantic==2.5.0
+transformers==4.36.0
+datasets==2.14.5
+peft==0.7.1
+torch==2.1.2
+torchvision==0.16.2
+torchaudio==2.1.2
+pydantic-settings==2.1.0
+python-multipart==0.0.6
+accelerate==0.25.0
+bitsandbytes==0.41.2
+scipy==1.11.4
+requests==2.31.0
