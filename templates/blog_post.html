@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <meta name="description" content="{{ description }}">
+    <meta name="robots" content="index, follow">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <a href="/">← Back to Home</a>
+        <h1>{{ post.title }}</h1>
+        <time datetime="{{ post.date }}">{{ post.date }}</time>
+    </header>
+    <main class="blog-content">
+        {{ content_html|safe }}
+    </main>
+    <footer>
+        <p>&copy; {{ datetime.now().year }} Alexendra</p>
+    </footer>
+</body>
+</html>

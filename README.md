@@ -1,48 +1,54 @@
-# Neural Network Project
+# Alexendra Blog & ML Backend
 
-Python project for building and training neural networks with **PyTorch**.
+A secure, modern web application combining a blog system with ML capabilities, designed for integration with MLOps projects!
 
-## Setup
+## Features
 
-1. **Create a virtual environment (recommended):**
-   ```powershell
-   python -m venv venv
-   .\venv\Scripts\Activate.ps1
-   ```
+- **Secure FastAPI Backend**: No "backend doors", following security best practices
+- **SEO-Optimized Blog System**: Reads markdown files from `blog_content/` with proper meta tags
+- **Organized ML Module**: Reusable Python package in `src/alexendra/` for MLOps integration
 
-2. **Install dependencies:**
-   ```powershell
-   pip install -r requirements.txt
-   ```
+## Project Structure
 
-## Project layout
-
-| File / folder | Purpose |
-|---------------|--------|
-| `model.py` | Reusable `NeuralNetwork` (MLP) and `build_mnist_classifier()` |
-| `train.py` | MNIST training script; downloads data, trains, saves `mnist_model.pt` |
-| `requirements.txt` | PyTorch, NumPy, Matplotlib |
-
-## Quick start
-
-Train on MNIST (downloads dataset on first run):
-
-```powershell
-python train.py
+```
+alexendra1/
+├── src/
+│   └── alexendra/       # Reusable ML module for MLOps integration
+│       ├── __init__.py
+│       ├── model.py
+│       ├── multimodal_merger.py
+│       ├── internet_crawler.py
+│       ├── advanced_model.py
+│       └── utils.py
+├── blog_content/        # Markdown files for blog posts
+│   ├── hello-world.md
+│   ├── dental-care-tips.md
+│   └── skin-care-guide.md
+├── static/              # Static assets (CSS, JS, images)
+│   └── style.css
+├── templates/           # Jinja2 HTML templates
+│   ├── home.html
+│   └── blog_post.html
+├── main.py              # FastAPI application entry point
+├── requirements.txt     # Project dependencies
+└── README.md
 ```
 
-## Customizing the network
+## Getting Started
 
-- **`model.py`**  
-  - `NeuralNetwork(layer_sizes, activation="relu", dropout=0.0)`  
-    - `layer_sizes`: e.g. `[784, 256, 128, 10]`  
-  - `build_mnist_classifier(hidden=(256, 128), dropout=0.2)`  
-    - Builds 784 → hidden → 10 for MNIST.
+1. **Install dependencies:**
+   ```bash
+   pip3 install -r requirements.txt
+   ```
 
-- **`train.py`**  
-  - Change `epochs`, `batch_size`, `lr`, or switch to another dataset by editing the script.
+2. **Run the server:**
+   ```bash
+   python3 -m uvicorn main:app --host 0.0.0.0 --port 8000
+   ```
 
-## Requirements
+3. **Visit the site:**
+   Open your browser and go to `http://localhost:8000`
 
-- Python 3.10+
-- PyTorch 2.x (CPU or CUDA)
+## Adding New Blog Posts
+
+Just create a new markdown file (.md) in `blog_content/`! The filename will be the URL slug!

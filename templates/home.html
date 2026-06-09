@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <meta name="description" content="{{ description }}">
+    <meta name="robots" content="index, follow">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <h1>{{ title }}</h1>
+    </header>
+    <main>
+        <h2>Recent Posts</h2>
+        {% if posts %}
+            <ul class="blog-list">
+                {% for post in posts %}
+                    <li>
+                        <a href="/blog/{{ post.slug }}">
+                            <h3>{{ post.title }}</h3>
+                            <time datetime="{{ post.date }}">{{ post.date }}</time>
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No blog posts yet.</p>
+        {% endif %}
+    </main>
+    <footer>
+        <p>&copy; {{ datetime.now().year }} Alexendra</p>
+    </footer>
+</body>
+</html>
