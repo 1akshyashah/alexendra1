@@ -1,54 +1,53 @@
-# Alexendra Blog & ML Backend
+# Dents et Visage
 
-A secure, modern web application combining a blog system with ML capabilities, designed for integration with MLOps projects!
+Un blog moderne et sécurisé dédié aux soins dentaires et à la beauté du visage, avec une architecture backend sécurisée et un module ML réutilisable pour l'intégration dans des projets MLOps.
 
-## Features
+## Fonctionnalités
 
-- **Secure FastAPI Backend**: No "backend doors", following security best practices
-- **SEO-Optimized Blog System**: Reads markdown files from `blog_content/` with proper meta tags
-- **Organized ML Module**: Reusable Python package in `src/alexendra/` for MLOps integration
+- **Backend FastAPI sécurisé**: Aucune "porte dérobée", suivant les meilleures pratiques de sécurité
+- **Système de blog optimisé pour le SEO**: Lit les fichiers Markdown depuis `blog_content/` avec des balises meta appropriées
+- **Module ML organisé**: Package Python réutilisable dans `src/alexendra/` pour l'intégration MLOps
 
-## Project Structure
+## Structure du Projet
 
 ```
 alexendra1/
 ├── src/
-│   └── alexendra/       # Reusable ML module for MLOps integration
+│   └── alexendra/       # Module ML réutilisable pour l'intégration MLOps
 │       ├── __init__.py
 │       ├── model.py
 │       ├── multimodal_merger.py
 │       ├── internet_crawler.py
 │       ├── advanced_model.py
 │       └── utils.py
-├── blog_content/        # Markdown files for blog posts
-│   ├── hello-world.md
+├── blog_content/        # Fichiers Markdown pour les articles de blog
 │   ├── dental-care-tips.md
 │   └── skin-care-guide.md
-├── static/              # Static assets (CSS, JS, images)
+├── static/              # Actifs statiques (CSS, JS, images)
 │   └── style.css
-├── templates/           # Jinja2 HTML templates
+├── templates/           # Modèles HTML Jinja2
 │   ├── home.html
 │   └── blog_post.html
-├── main.py              # FastAPI application entry point
-├── requirements.txt     # Project dependencies
+├── main.py              # Point d'entrée de l'application FastAPI
+├── requirements.txt     # Dépendances du projet
 └── README.md
 ```
 
-## Getting Started
+## Mise en Route
 
-1. **Install dependencies:**
+1. **Installer les dépendances :**
    ```bash
    pip3 install -r requirements.txt
    ```
 
-2. **Run the server:**
+2. **Lancer le serveur :**
    ```bash
    python3 -m uvicorn main:app --host 0.0.0.0 --port 8000
    ```
 
-3. **Visit the site:**
-   Open your browser and go to `http://localhost:8000`
+3. **Visiter le site :**
+   Ouvrez votre navigateur et allez sur `http://localhost:8000`
 
-## Adding New Blog Posts
+## Ajouter de Nouveaux Articles de Blog
 
-Just create a new markdown file (.md) in `blog_content/`! The filename will be the URL slug!
+Créez simplement un nouveau fichier Markdown (.md) dans `blog_content/`! Le nom de fichier deviendra le slug de l'URL!

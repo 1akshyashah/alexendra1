@@ -11,7 +11,7 @@ import markdown
 import json
 from pathlib import Path
 
-app = FastAPI(title="Alexendra Blog & ML API")
+app = FastAPI(title="Dents et Visage")
 
 BLOG_DIR = Path("blog_content")
 STATIC_DIR = Path("static")
@@ -61,8 +61,8 @@ async def home():
         {
             "request": {},
             "posts": posts,
-            "title": "Alexendra Blog",
-            "description": "A secure blog platform with ML capabilities",
+            "title": "Dents et Visage",
+            "description": "Soins dentaires et beauté du visage",
             "datetime": datetime
         }
     )
