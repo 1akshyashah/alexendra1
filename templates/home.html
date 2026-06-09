@@ -6,33 +6,43 @@
     <title>{{ title }}</title>
     <meta name="description" content="{{ description }}">
     <meta name="robots" content="index, follow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
+    <nav>
+        <div class="container">
+            <a href="/" class="logo">Dents <span>et</span> Visage</a>
+        </div>
+    </nav>
+
     <div class="container">
-        <header>
-            <h1>{{ title }}</h1>
-        </header>
-        <main>
-            <h2>Recent Posts</h2>
-            {% if posts %}
-                <ul class="blog-list">
+        <section class="hero">
+            <h1>Welcome</h1>
+            <p>Expert advice for your dental health and skincare.</p>
+        </section>
+
+        <section class="blog-section">
+            <div class="blog-grid">
+                {% if posts %}
                     {% for post in posts %}
-                        <li>
-                            <a href="/blog/{{ post.slug }}">
-                                <h3>{{ post.title }}</h3>
-                                <time datetime="{{ post.date }}">{{ post.date }}</time>
-                            </a>
-                        </li>
+                        <a href="/blog/{{ post.slug }}" class="blog-card">
+                            <time datetime="{{ post.date }}">{{ post.date }}</time>
+                            <h3>{{ post.title }}</h3>
+                            <p>Discover practical tips.</p>
+                        </a>
                     {% endfor %}
-                </ul>
-            {% else %}
-                <p>No blog posts yet.</p>
-            {% endif %}
-        </main>
-        <footer>
-            <p>&copy; {{ datetime.now().year }} Dents et Visage</p>
-        </footer>
+                {% else %}
+                    <p>No blog posts available yet.</p>
+                {% endif %}
+            </div>
+        </section>
     </div>
+
+    <footer>
+        <p>&copy; {{ datetime.now().year }} Dents et Visage. All rights reserved.</p>
+    </footer>
 </body>
 </html>

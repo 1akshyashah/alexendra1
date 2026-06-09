@@ -3,24 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }}</title>
+    <title>{{ post.title }} | {{ title }}</title>
     <meta name="description" content="{{ description }}">
     <meta name="robots" content="index, follow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
+    <nav>
+        <div class="container">
+            <a href="/" class="logo">Dents <span>et</span> Visage</a>
+        </div>
+    </nav>
+
     <div class="container">
-        <header>
+        <header class="post-header">
             <a href="/" class="back-link">← Back to Home</a>
             <h1>{{ post.title }}</h1>
             <time datetime="{{ post.date }}">{{ post.date }}</time>
         </header>
-        <main class="blog-content">
+
+        <article class="post-content">
             {{ content_html|safe }}
-        </main>
-        <footer>
-            <p>&copy; {{ datetime.now().year }} Dents et Visage</p>
-        </footer>
+        </article>
     </div>
+
+    <footer>
+        <p>&copy; {{ datetime.now().year }} Dents et Visage. All rights reserved.</p>
+    </footer>
 </body>
 </html>
